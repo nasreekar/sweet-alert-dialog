@@ -6,11 +6,10 @@
              android:layout_width="wrap_content"
              android:layout_height="match_parent"
              android:background="?attr/sweet_alert_bg_drawable"
-             android:layoutDirection="ltr"
-    >
+             android:layoutDirection="ltr">
+
 
     <LinearLayout
-
         android:id="@+id/loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -154,15 +153,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:maxLines="1000"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:textAlignment="center"
             android:textColor="?attr/sweet_alert_content_text_color"
             android:textSize="16sp"
             android:visibility="gone"
-            tools:text="message \n message \n message
-        "
             tools:visibility="visible"/>
 
         <FrameLayout
@@ -208,7 +204,6 @@
                 style="@style/dialog_blue_button"
                 android:text="Ok"/>
         </LinearLayout>
-
 
     </LinearLayout>
 </FrameLayout>

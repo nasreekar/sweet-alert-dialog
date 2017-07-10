@@ -16,6 +16,7 @@ import android.view.animation.Transformation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pnikosis.materialishprogress.ProgressWheel;
@@ -61,6 +62,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     private OnSweetClickListener mConfirmClickListener;
     private OnSweetClickListener mNeutralClickListener;
     private boolean mCloseFromCancel;
+    private LinearLayout mAlertDialogBackground;
 
     public static final int NORMAL_TYPE = 0;
     public static final int ERROR_TYPE = 1;
@@ -153,6 +155,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         setContentView(R.layout.alert_dialog);
 
         mDialogView = getWindow().getDecorView().findViewById(android.R.id.content);
+        mAlertDialogBackground = (LinearLayout) findViewById(R.id.loading);
         mTitleTextView = (TextView) findViewById(R.id.title_text);
         mContentTextView = (TextView) findViewById(R.id.content_text);
         mCustomViewContainer = (FrameLayout) findViewById(R.id.custom_view_container);
@@ -246,6 +249,11 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
                 playAnimation();
             }
         }
+    }
+
+
+    public void setAlertDialogBackgroud(int color) {
+        mAlertDialogBackground.setBackgroundColor(color);
     }
 
     public int getAlerType() {
