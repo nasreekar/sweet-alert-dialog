@@ -180,7 +180,8 @@
             android:layout_marginTop="15dp"
             android:gravity="center">
 
-            
+
+
             <Button
                 android:id="@+id/cancel_button"
                 style="@style/dialog_blue_button"
@@ -204,7 +205,7 @@
                 android:gravity="center"
                 android:textAlignment="center"
                 android:visibility="gone"
-                tools:text="neutral"
+                tools:text="neutranl"
                 tools:visibility="gone"/>
 
             <Button
