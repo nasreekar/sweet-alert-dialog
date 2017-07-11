@@ -180,6 +180,7 @@
             android:layout_marginTop="15dp"
             android:gravity="center">
 
+            
             <Button
                 android:id="@+id/cancel_button"
                 style="@style/dialog_blue_button"
