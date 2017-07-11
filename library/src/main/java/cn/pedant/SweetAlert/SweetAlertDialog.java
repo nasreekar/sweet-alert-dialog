@@ -70,6 +70,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     public static final int WARNING_TYPE = 3;
     public static final int CUSTOM_IMAGE_TYPE = 4;
     public static final int PROGRESS_TYPE = 5;
+    public static final int PROGRESS_CANCEL_TYPE = 6;
 
 
     public static boolean DARK_STYLE = false;
@@ -242,6 +243,11 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
                     break;
                 case PROGRESS_TYPE:
                     mProgressFrame.setVisibility(View.VISIBLE);
+                    mConfirmButton.setVisibility(View.GONE);
+                    break;
+                case PROGRESS_CANCEL_TYPE:
+                    mProgressFrame.setVisibility(View.VISIBLE);
+                    mCancelButton.setVisibility(View.VISIBLE);
                     mConfirmButton.setVisibility(View.GONE);
                     break;
             }

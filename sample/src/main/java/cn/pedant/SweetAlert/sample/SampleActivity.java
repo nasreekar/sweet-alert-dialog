@@ -72,7 +72,7 @@ public class SampleActivity extends Activity implements View.OnClickListener {
             case R.id.success_text_test:
                 new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE)
                         .setTitleText("Good job!")
-                        .setContentText("You clicked the button!")
+                        .setContentText(getString(R.string.connecting_to_babyphone))
                         .show();
                 break;
             case R.id.warning_confirm_test:
