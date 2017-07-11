@@ -125,10 +125,10 @@
 
             <com.pnikosis.materialishprogress.ProgressWheel
                 android:id="@+id/progressWheel"
-                android:background="@color/float_transparent"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
+                android:background="@color/float_transparent"
                 app:matProg_progressIndeterminate="true"/>
         </FrameLayout>
 
@@ -136,10 +136,10 @@
             android:id="@+id/title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:gravity="center"
             android:layout_marginEnd="10dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
             android:textColor="?attr/sweet_alert_title_text_color"
             android:textSize="19sp"
             android:visibility="gone"
@@ -183,8 +183,12 @@
             <Button
                 android:id="@+id/cancel_button"
                 style="@style/dialog_blue_button"
-                android:layout_marginRight="25dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/red_button_background"
+                android:gravity="center"
+                android:textAlignment="center"
                 android:visibility="gone"
                 tools:text="cancel"
                 tools:visibility="visible"/>
@@ -192,9 +196,12 @@
             <Button
                 android:id="@+id/neutral_button"
                 style="@style/dialog_blue_button"
-                android:layout_marginLeft="-10dp"
-                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/gray_button_background"
+                android:gravity="center"
+                android:textAlignment="center"
                 android:visibility="gone"
                 tools:text="neutral"
                 tools:visibility="gone"/>
@@ -202,7 +209,12 @@
             <Button
                 android:id="@+id/confirm_button"
                 style="@style/dialog_blue_button"
-                android:text="Ok"/>
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="Ok"
+                android:textAlignment="center"/>
         </LinearLayout>
 
     </LinearLayout>

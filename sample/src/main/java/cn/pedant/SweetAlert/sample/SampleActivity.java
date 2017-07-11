@@ -51,11 +51,17 @@ public class SampleActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.basic_test:
-                SweetAlertDialog sd = new SweetAlertDialog(this);
-                sd.setCancelable(true);
-                sd.setCanceledOnTouchOutside(true);
-                sd.setContentText("Here's a message");
-                sd.show();
+                new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_CANCEL_TYPE)
+                        .setTitleText("Are you sure?")
+                        .setContentText("Won't be able to recover this file!")
+                        .setCancelButton("Yes,delete it!", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                // reuse previous dialog instance
+                               sweetAlertDialog.cancel();
+                            }
+                        })
+                        .show();
                 break;
             case R.id.under_text_test:
                 new SweetAlertDialog(this)
@@ -76,7 +82,7 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                         .show();
                 break;
             case R.id.warning_confirm_test:
-                new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+                new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_CANCEL_TYPE)
                         .setTitleText("Are you sure?")
                         .setContentText("Won't be able to recover this file!")
                         .setCancelButton("Yes,delete it!", new SweetAlertDialog.OnSweetClickListener() {
