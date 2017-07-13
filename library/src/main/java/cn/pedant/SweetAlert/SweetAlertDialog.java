@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
@@ -285,6 +287,23 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
                 mTitleTextView.setText(mTitleText);
             }
         }
+        return this;
+    }
+
+
+    public SweetAlertDialog setCountDownTimerBeforeToDismiss(int duration) {
+        new CountDownTimer(duration, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                Log.e("setCountDownTi", "onFinish");
+                SweetAlertDialog.this.cancel();
+            }
+        };
         return this;
     }
 
