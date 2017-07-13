@@ -78,7 +78,7 @@ public class SampleActivity extends Activity implements View.OnClickListener {
             case R.id.success_text_test:
                 new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE)
                         .setTitleText("Good job!")
-                        .setContentText("1azldpazdok aozdkaopzd   d  azd       za dazdiaozdkaodi     adzidzaidjozadjoiajd")
+                        .setContentText("recuperation des derniers logs")
                         .setCountDownTimerBeforeToDismiss(800 * 7)
                         .show();
                 break;
