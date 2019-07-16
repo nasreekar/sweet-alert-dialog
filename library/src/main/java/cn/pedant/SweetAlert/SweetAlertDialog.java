@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
@@ -20,6 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pnikosis.materialishprogress.ProgressWheel;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -74,6 +77,10 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
 
 
     public static boolean DARK_STYLE = false;
+
+    private float mTitleSize;
+    private float mContentSize;
+    private float mButtonsSize;
 
     //aliases
     public final static int BUTTON_CONFIRM = DialogInterface.BUTTON_POSITIVE;
@@ -186,6 +193,9 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         setCancelText(mCancelText);
         setConfirmText(mConfirmText);
         setNeutralText(mNeutralText);
+        setTitleTextSize(mTitleSize);
+        setContentTextSize(mContentSize);
+        setButtonsTextSize(mButtonsSize);
         changeAlertType(mAlertType, true);
 
     }
@@ -287,6 +297,40 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         }
         return this;
     }
+
+    public SweetAlertDialog setTitleTextSize(float size){
+        mTitleSize = size;
+        if (mTitleTextView != null && mTitleSize != 0) {
+            mTitleTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
+        }
+
+
+        return this;
+    }
+
+    public SweetAlertDialog setContentTextSize(float size){
+        mContentSize = size;
+        if (mContentTextView != null && mContentSize != 0) {
+            mContentTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
+        }
+
+        return this;
+    }
+
+    public SweetAlertDialog setButtonsTextSize(float size){
+        mButtonsSize = size;
+        if (mCancelButton != null && mButtonsSize != 0) {
+            mCancelButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
+        }
+
+        if (mConfirmButton != null && mButtonsSize != 0) {
+            mConfirmButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
+        }
+
+        return this;
+    }
+
+
 
     public SweetAlertDialog setCustomImage(Drawable drawable) {
         mCustomImgDrawable = drawable;
